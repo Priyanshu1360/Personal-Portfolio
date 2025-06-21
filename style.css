@@ -1,0 +1,265 @@
+/* 🎨 Rama Kanwar Portfolio – Enhanced CSS with Colors, Animations & Layout */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #1f1c2c, #928dab);
+  color: #f5f5f5;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(31, 28, 44, 0.95);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  animation: fadeDown 1s ease-in-out;
+}
+
+.navbar h1 {
+  color: #ffcc70;
+  font-size: 2rem;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #ffcc70;
+  transition: width 0.3s;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.home-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ffcc70;
+  box-shadow: 0 0 20px rgba(255, 204, 112, 0.5);
+  animation: zoomIn 1.2s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.home-content h2 {
+  font-size: 2.7rem;
+  margin-bottom: 0.3rem;
+  color: #ffcc70;
+}
+
+.home-content h3 {
+  font-size: 1.5rem;
+  color: #84fab0;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  margin: 1rem 1rem 0 0;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 94, 98, 0.4);
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+}
+
+.skills-grid div {
+  flex: 1 1 250px;
+  padding: 1rem;
+  background: #2c2f48;
+  border-left: 5px solid #84fab0;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.skills-grid div:hover {
+  transform: scale(1.03);
+  background: #3a3f5e;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.project {
+  flex: 1 1 calc(25% - 1rem);
+  min-width: 250px;
+  background: #2e2b3f;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+}
+
+.project::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  transform: skewX(-25deg);
+  transition: left 0.5s;
+}
+
+.project:hover::before {
+  left: 200%;
+}
+
+.project h3 {
+  color: #ffcc70;
+  margin: 0;
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #84fab0;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.project a:hover {
+  color: #ffcc70;
+}
+
+#contact {
+  background-color: #141414;
+  border-radius: 12px;
+  padding: 2rem;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#contact a {
+  color: #84fab0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#contact a:hover {
+  color: #ffcc70;
+}
+
+footer {
+  background: #1a1a1a;
+  color: #ccc;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 4rem;
+  border-top: 1px solid #333;
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+  }
+ .projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+.project {
+  flex: 1 1 calc(25% - 1rem);
+  min-width: 250px;
+}
+
+  .navbar ul {
+    flex-direction: column;
+    background-color: #1f1c2c;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    display: none;
+  }
+  .navbar ul.active {
+    display: flex;
+  }
+}
